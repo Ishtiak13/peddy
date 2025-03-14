@@ -39,7 +39,7 @@ const showCategories = (cat = "") => {
   const category = document.createElement("button");
   category.id = `${cat.id}`;
   category.className =
-    "btn py-6 px-14 button-cat rounded-[16px] border-[#0E7A8115] bg-white overflow-hidden btn-xl";
+    "btn lg:py-6 lg:px-14 button-cat rounded-[16px] border-[#0E7A8115] bg-white overflow-hidden lg:btn-xl";
   category.innerHTML = `<img class="w-6 mr-2 " src="${cat.category_icon}" alt="" /> ${cat.category}`;
 
   btnCategories.appendChild(category);
@@ -91,7 +91,7 @@ const showPets = (pet = "") => {
               </ul>
 
               <hr class="border-1 border-gray-100" />
-              <div class="card-actions justify-between">
+              <div class="flex justify-between">
                 <button class="btn btn-square bg-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -109,9 +109,48 @@ const showPets = (pet = "") => {
                   </svg>
                 </button>
                 <button class="btn bg-white text-[#0E7A81]">Adopt</button>
-                <button  class="btn pet-details bg-white text-[#0E7A81]">Details</button>
+                <button  onclick="my_modal_1${each.petId}.showModal()" class="btn  pet-details bg-white text-[#0E7A81]">Details</button>
               </div>
             </div>
+<dialog id="my_modal_1${each.petId}" class="modal">
+  <div class="modal-box space-y-4">
+  <img
+                class="rounded-2xl w-full"
+                src=${each.image}
+                alt=${each.category}
+              />
+              <h2 class="card-title">
+                ${each.pet_name}
+                <div class="badge badge-secondary">NEW</div>
+              </h2>
+              <ul class="text-[#13131370] grid grid-cols-2">
+                <li>
+                  <i
+                    class="fa-thin fa-diamonds-4 fa-rotate-by"
+                    style="--fa-rotate-angle: 45deg"
+                  ></i>
+                  Breed: ${each.breed}
+                </li>
+                <li><i class="fa-light fa-calendar"></i> Birth: ${each.date_of_birth}</li>
+                <li><i class="fa-light fa-venus-mars"></i> Gender: ${each.gender}</li>
+                <li><i class="fa-light fa-venus-mars"></i> Vaccinated status: : ${each.vaccinated_status}</li>
+                <li><i class="fa-light fa-square-dollar"></i> Price: ${each.price}$ </li>
+              </ul>
+  
+    <hr class="border-1 border-gray-100" />
+    <div><h2 class="card-title">
+               Details Information
+
+              </h2>
+    <p class="py-4">${each.pet_details}</p></div>
+    <div class="modal-action">
+      <form method="dialog">
+      
+        <button class="btn w-full">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
           `;
     btnCategories.appendChild(category);
   });
