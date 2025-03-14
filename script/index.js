@@ -1,3 +1,9 @@
+document.getElementById("categoryButton").addEventListener("click", () => {
+  document
+    .getElementById("categoryishere")
+    .scrollIntoView({ behavior: "smooth" });
+});
+
 //! Load function:
 
 const loadCategories = async () => {
@@ -33,13 +39,14 @@ const showCategories = (cat = "") => {
   const category = document.createElement("button");
   category.id = `${cat.id}`;
   category.className =
-    "btn py-6 px-14 button-cat rounded-md border-[#0E7A8115] bg-white overflow-hidden btn-xl";
+    "btn py-6 px-14 button-cat rounded-[16px] border-[#0E7A8115] bg-white overflow-hidden btn-xl";
   category.innerHTML = `<img class="w-6 mr-2 " src="${cat.category_icon}" alt="" /> ${cat.category}`;
 
   btnCategories.appendChild(category);
 };
 
 const showPets = (pet = "") => {
+  console.log(pet);
   document.getElementById("pet-container").innerHTML = ``;
   if (pet.length == 0) {
     document.getElementById("pet-container").innerHTML = ` <div
@@ -102,7 +109,7 @@ const showPets = (pet = "") => {
                   </svg>
                 </button>
                 <button class="btn bg-white text-[#0E7A81]">Adopt</button>
-                <button class="btn bg-white text-[#0E7A81]">Details</button>
+                <button  class="btn pet-details bg-white text-[#0E7A81]">Details</button>
               </div>
             </div>
           `;
@@ -121,22 +128,20 @@ document
       // Reset background of all buttons before highlighting the clicked one
       document.querySelectorAll(".button-cat").forEach((btn) => {
         console.log(btn);
-        btn.style.background = "";
-        btn.style.border = "";
-        btn.style.borderRadius = ""; // Reset to default
+        btn.style.background = "white";
+        btn.style.border = "1px solid #0E7A8115";
+        btn.style.borderRadius = "16px"; // Reset to default
       });
 
       button.style.background = "#0E7A8110";
       button.style.border = "1px solid #0E7A81";
-      button.style.borderRadius = "16px"; // Highlight the clicked button
+      button.style.borderRadius = "calc(infinity* 1px)"; // Highlight the clicked button
     }
   });
 
 document.getElementById("all-btn").addEventListener("click", (event) => {
   loadAllPets();
 });
-
 //! function call
 loadCategories();
-loadPets();
 loadAllPets();

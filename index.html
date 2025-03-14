@@ -34,8 +34,8 @@
     <link rel="shortcut icon" href="./images/logo.webp" type="image/x-icon" />
     <title>Peddy - Pet Adoption Platform</title>
   </head>
-  <body class="primary-font container mx-auto">
-    <header>
+  <body class="primary-font mx-auto">
+    <header class="container mx-auto">
       <!-- Navbar -->
       <nav>
         <div class="navbar bg-base-100">
@@ -94,16 +94,22 @@
             the readable content of a page when looking at its layout. The point
             of using Lorem Ipsum is that it has a.
           </p>
-          <button class="btn rounded-lg bg-[#0E7A81] text-white">
+          <button
+            id="categoryButton"
+            class="btn rounded-lg bg-[#0E7A81] text-white"
+          >
             View More
           </button>
         </div>
         <div><img src="./images/pet.webp" alt="" /></div>
       </section>
     </header>
-    <main>
+    <main class="container mx-auto">
       <!-- category section -->
-      <section class="flex flex-col justify-center items-center mt-14 gap-10">
+      <section
+        id="categoryishere"
+        class="flex flex-col justify-center items-center mt-14 gap-10"
+      >
         <div class="text-center max-w-[636px] space-y-5">
           <h2 class="primary-color text-4xl font-black">
             Adopt Your Best Friend
@@ -114,10 +120,10 @@
             of using Lorem Ipsum is that it has a.
           </p>
         </div>
-        <div id="category-container" class="flex gap-6">
+        <div id="category-container" class="flex flex-wrap gap-6">
           <button
             id="all-btn"
-            class="btn btn-xl p-6 button-cat rounded-md border-[#0E7A8115] bg-white"
+            class="btn btn-xl p-6 button-cat rounded-full border-[#0E7A81] bg-[#0E7A8110]"
           >
             All
           </button>
@@ -127,16 +133,69 @@
         <div class="flex justify-between font-black text-2xl">
           <h3>Best Deal For You</h3>
           <button class="btn rounded-lg bg-[#0E7A81] text-white">
-            View More
+            Sort by Price
           </button>
         </div>
         <div
           id="pet-container"
           class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-14"
-        ></div>
+        >
+          <div
+            class="col-span-full text-center h-96 flex justify-center items-center"
+          >
+            <span class="loading loading-dots loading-xl"></span>
+          </div>
+        </div>
       </section>
     </main>
-    <footer></footer>
+
+    <!--! footer !-->
+    <footer
+      class="footer mt-20 sm:footer-horizontal bg-[#131313] text-[white] lg:pl-50 lg:p-24 m-0"
+    >
+      <div class="space-y-4">
+        <div class="flex-1 flex gap-2 items-center cursor-pointer">
+          <img src="./images/logo.webp" alt="" />
+          <a class="text-3xl font-black">Peddy</a>
+        </div>
+        <p class="text-[#ffffff90]">
+          Location: Dhaka, Bangladesh <br />
+          Phone: +8801510000001 <br />
+          Email: info@peddy.com <br />
+          Openings hours: 9.00 AM - 5.00 PM
+        </p>
+        <div class="text-[#ffffff90] space-x-3">
+          <i class="fa-brands fa-facebook fa-2xl"></i>
+          <i class="fa-brands fa-instagram fa-2xl"></i>
+          <i class="fa-brands fa-x-twitter fa-2xl"></i>
+          <i class="fa-brands fa-youtube fa-2xl"></i>
+        </div>
+      </div>
+      <nav>
+        <h6 class="footer-title">Useful Link</h6>
+        <a class="link link-hover">Home</a>
+        <a class="link link-hover">About us</a>
+
+        <a class="link link-hover">Animals</a>
+        <a class="link link-hover">Foundation</a>
+        <a class="link link-hover">Contact</a>
+      </nav>
+
+      <form>
+        <h6 class="footer-title">Newsletter</h6>
+        <fieldset class="w-80">
+          <label>Enter your email address</label>
+          <div class="join">
+            <input
+              type="text"
+              placeholder="username@site.com"
+              class="input text-[#131313] input-bordered join-item focus:outline-none focus:border-none"
+            />
+            <button class="btn bg-[#0E7A81] join-item">Subscribe</button>
+          </div>
+        </fieldset>
+      </form>
+    </footer>
     <script src="./script/index.js"></script>
   </body>
 </html>
