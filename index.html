@@ -26,21 +26,117 @@
       .primary-font {
         font-family: "Lato", sans-serif;
       }
+      .primary-color {
+        color: #131313;
+      }
     </style>
     <!-- Favicon & title -->
     <link rel="shortcut icon" href="./images/logo.webp" type="image/x-icon" />
     <title>Peddy - Pet Adoption Platform</title>
   </head>
-  <body class="primary-font">
-    <header class="w-screen h-screen flex justify-center items-center">
-      <div class="flex w-52 flex-col gap-4">
-        <div class="skeleton h-32 w-full"></div>
-        <div class="skeleton h-4 w-28"></div>
-        <div class="skeleton h-4 w-full"></div>
-        <div class="skeleton h-4 w-full"></div>
-      </div>
+  <body class="primary-font container mx-auto">
+    <header>
+      <!-- Navbar -->
+      <nav>
+        <div class="navbar bg-base-100">
+          <div class="flex-1 flex gap-2 items-center cursor-pointer">
+            <img src="./images/logo.webp" alt="" />
+            <a class="text-3xl font-black">Peddy</a>
+          </div>
+          <div class="flex gap-2">
+            <input
+              type="text"
+              placeholder="Search"
+              class="input input-bordered w-24 md:w-auto"
+            />
+            <div class="dropdown dropdown-end">
+              <div
+                tabindex="0"
+                role="button"
+                class="btn btn-ghost btn-circle avatar"
+              >
+                <div class="w-10 rounded-full flex justify-center items-center">
+                  <i
+                    class="fa-regular fa-user text-2xl bg-slate-200 h-full w-full p-1"
+                  ></i>
+                </div>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              >
+                <li>
+                  <a class="justify-between">
+                    Profile
+                    <span class="badge">New</span>
+                  </a>
+                </li>
+                <li><a>Settings</a></li>
+                <li><a>Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- banner -->
+      <section class="flex justify-center items-center flex-col mt-10">
+        <div
+          class="flex justify-center items-center flex-col space-y-7 max-w-[752px] text-center"
+        >
+          <h2 class="text-[#13131360] text-2xl font-bold">
+            Bringing Families Together ❤️‍🔥
+          </h2>
+          <h1 class="primary-color text-7xl font-black">
+            Your Path to Adoption Starts Here
+          </h1>
+          <p class="primary-color">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a.
+          </p>
+          <button class="btn rounded-lg bg-[#0E7A81] text-white">
+            View More
+          </button>
+        </div>
+        <div><img src="./images/pet.webp" alt="" /></div>
+      </section>
     </header>
-    <main></main>
+    <main>
+      <!-- category section -->
+      <section class="flex flex-col justify-center items-center mt-14 gap-10">
+        <div class="text-center max-w-[636px] space-y-5">
+          <h2 class="primary-color text-4xl font-black">
+            Adopt Your Best Friend
+          </h2>
+          <p class="text-[#13131370]">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a.
+          </p>
+        </div>
+        <div id="category-container" class="flex gap-6">
+          <button
+            id="all-btn"
+            class="btn btn-xl p-6 button-cat rounded-md border-[#0E7A8115] bg-white"
+          >
+            All
+          </button>
+        </div>
+      </section>
+      <section class="mt-10">
+        <div class="flex justify-between font-black text-2xl">
+          <h3>Best Deal For You</h3>
+          <button class="btn rounded-lg bg-[#0E7A81] text-white">
+            View More
+          </button>
+        </div>
+        <div
+          id="pet-container"
+          class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-14"
+        ></div>
+      </section>
+    </main>
     <footer></footer>
+    <script src="./script/index.js"></script>
   </body>
 </html>
